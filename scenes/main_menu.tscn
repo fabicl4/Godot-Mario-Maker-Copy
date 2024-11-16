@@ -1,0 +1,163 @@
+[gd_scene load_steps=10 format=4 uid="uid://bq1cqo2jkjnte"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_6b1wt"]
+[ext_resource type="PackedScene" uid="uid://daioq0o5cmfef" path="res://scenes/background.tscn" id="1_xfpm5"]
+[ext_resource type="SpriteFrames" uid="uid://blq7abefmues2" path="res://assets/animation/player_animation.tres" id="2_wirae"]
+[ext_resource type="Theme" path="res://theme/ui_theme.tres" id="3_kpuku"]
+[ext_resource type="FontFile" uid="uid://bt1lbket2snnd" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_hj7sj"]
+[ext_resource type="PackedScene" uid="uid://c8ucj48wfr6v" path="res://items/palms/front_palm/palm_1.tscn" id="4_hsktr"]
+[ext_resource type="TileSet" uid="uid://bfce8deow0bdn" path="res://resources/tileset/terrain_tileset.tres" id="5_7ynlg"]
+[ext_resource type="SpriteFrames" uid="uid://bfsr0w323cuw5" path="res://assets/animation/gold_coin_animation.tres" id="5_8b4vb"]
+[ext_resource type="PackedScene" uid="uid://dstsvl60w1kiu" path="res://menu/in_game_menu.tscn" id="9_cyamk"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_6b1wt")
+
+[node name="OceanBackground" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ocean_background" parent="OceanBackground" instance=ExtResource("1_xfpm5")]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(128, 192)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(15, 16)
+sprite_frames = ExtResource("2_wirae")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Node2D"]
+tile_map_data = PackedByteArray("AAD//wEAAQAAAAAAAAD//wIAAQAAAAEAAAD//wMAAQAAAAIAAAAAAAEAAQABAAAAAAAAAAIAAQABAAEAAAAAAAMAAQABAAIAAAABAAEAAQACAAAAAAABAAIAAQACAAEAAAABAAMAAQACAAIAAAA=")
+tile_set = ExtResource("5_7ynlg")
+
+[node name="palm1" parent="Node2D" instance=ExtResource("4_hsktr")]
+position = Vector2(48, 40)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(48, -65)
+sprite_frames = ExtResource("5_8b4vb")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UILayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_kpuku")
+
+[node name="Label" type="Label" parent="UILayer/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 64.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme = ExtResource("3_kpuku")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_hj7sj")
+theme_override_font_sizes/font_size = 24
+text = "Pirate Bay Maker!"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="UILayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 21.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_kpuku")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/Control/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PlayButton" type="Button" parent="UILayer/Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_hj7sj")
+theme_override_font_sizes/font_size = 8
+text = "Play"
+
+[node name="EditButton" type="Button" parent="UILayer/Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_hj7sj")
+theme_override_font_sizes/font_size = 8
+text = "Edit"
+
+[node name="CreditsButton" type="Button" parent="UILayer/Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_hj7sj")
+theme_override_font_sizes/font_size = 8
+disabled = true
+text = "Credits"
+
+[node name="OptionsButton" type="Button" parent="UILayer/Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_hj7sj")
+theme_override_font_sizes/font_size = 8
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="UILayer/Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_hj7sj")
+theme_override_font_sizes/font_size = 8
+text = "Quit"
+
+[node name="Options" type="CenterContainer" parent="UILayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -98.0
+offset_right = 256.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_kpuku")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/Options"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="UILayer/Options/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_hj7sj")
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="OptionsMenu" parent="UILayer/Options/VBoxContainer" instance=ExtResource("9_cyamk")]
+layout_mode = 2
+
+[node name="ReturnButton" type="Button" parent="UILayer/Options/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_hj7sj")
+text = "Return"
+
+[node name="Credits" type="CenterContainer" parent="UILayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="UILayer/Control/CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="UILayer/Control/CenterContainer/VBoxContainer/EditButton" to="." method="_on_edit_button_pressed"]
+[connection signal="pressed" from="UILayer/Control/CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="UILayer/Control/CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="UILayer/Control/CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UILayer/Options/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]

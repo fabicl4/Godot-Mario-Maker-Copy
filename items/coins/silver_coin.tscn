@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://levjehx6nlmt"]
+
+[ext_resource type="PackedScene" uid="uid://js0r7s46b3kp" path="res://items/coins/default_coin.tscn" id="1_6dxop"]
+[ext_resource type="SpriteFrames" uid="uid://wehoiu2iwceg" path="res://assets/animation/silver_coin_animation.tres" id="2_kvf0j"]
+
+[node name="DefaultCoin" instance=ExtResource("1_6dxop")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = ExtResource("2_kvf0j")
+animation = &"idle"

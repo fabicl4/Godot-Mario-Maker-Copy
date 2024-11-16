@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://donrejh2fegnm"]
+
+[ext_resource type="Theme" path="res://theme/ui_theme.tres" id="1_qjmqr"]
+[ext_resource type="PackedScene" uid="uid://b2eju1kg5yvd7" path="res://menu/volume/volume_settings.tscn" id="1_ru00c"]
+[ext_resource type="AudioStream" uid="uid://ckoemmm3lgtwi" path="res://assets/sounds/jump.wav" id="2_nwmvi"]
+
+[node name="VolumeSettingsMenu" type="MarginContainer"]
+offset_right = 252.0
+offset_bottom = 98.0
+size_flags_horizontal = 0
+theme = ExtResource("1_qjmqr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MasterVolumeSettings" parent="VBoxContainer" instance=ExtResource("1_ru00c")]
+layout_mode = 2
+start_volume_percentage = 50.0
+bus_index = 0
+bus_name = "Master"
+
+[node name="MusicVolumeSettings" parent="VBoxContainer" instance=ExtResource("1_ru00c")]
+layout_mode = 2
+
+[node name="SFXVolumeSettings" parent="VBoxContainer" instance=ExtResource("1_ru00c")]
+layout_mode = 2
+bus_index = 2
+bus_name = "SFX"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/SFXVolumeSettings"]
+stream = ExtResource("2_nwmvi")

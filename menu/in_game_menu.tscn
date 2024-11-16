@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dstsvl60w1kiu"]
+
+[ext_resource type="PackedScene" uid="uid://donrejh2fegnm" path="res://menu/volume/volume_settings_menu.tscn" id="1_78ufj"]
+[ext_resource type="Theme" path="res://theme/ui_theme.tres" id="1_wifvk"]
+[ext_resource type="PackedScene" uid="uid://n4w3olcy28at" path="res://menu/graphics/graphic_settings.tscn" id="3_3nqcr"]
+
+[node name="OptionsMenu" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wifvk")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+custom_minimum_size = Vector2(512, 196)
+layout_mode = 2
+theme_override_constants/side_margin = 16
+current_tab = 0
+
+[node name="Graphic" parent="TabContainer" instance=ExtResource("3_3nqcr")]
+layout_mode = 2
+theme = null
+metadata/_tab_index = 0
+
+[node name="Audio" parent="TabContainer" instance=ExtResource("1_78ufj")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1

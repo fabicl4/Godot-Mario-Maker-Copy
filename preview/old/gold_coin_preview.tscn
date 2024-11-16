@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://clj7b1dbjiiua"]
+
+[ext_resource type="PackedScene" uid="uid://ciwa08fu0pglw" path="res://preview/old/preview.tscn" id="1_yxktq"]
+[ext_resource type="Texture2D" uid="uid://bo2rw1ukwvcs6" path="res://assets/sprites/Gold Coin/01.png" id="2_uarii"]
+
+[node name="Preview" instance=ExtResource("1_yxktq")]
+
+[node name="TextureRect" parent="." index="0"]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+mouse_filter = 0
+texture = ExtResource("2_uarii")

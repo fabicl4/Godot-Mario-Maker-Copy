@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://js0r7s46b3kp"]
+
+[ext_resource type="Script" path="res://scripts/collectable.gd" id="1_j2ndj"]
+[ext_resource type="AudioStream" uid="uid://cjncxpy83c6o4" path="res://assets/sounds/coin.wav" id="2_orbtw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drt5t"]
+
+[node name="DefaultCoin" type="Node2D"]
+script = ExtResource("1_j2ndj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_orbtw")
+bus = &"SFX"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_drt5t")
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

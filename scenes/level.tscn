@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5ja4y0kx4mlp"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_aqe0y"]
+[ext_resource type="TileSet" uid="uid://bfce8deow0bdn" path="res://resources/tileset/terrain_tileset.tres" id="1_st36i"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_aqe0y")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_st36i")
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Palms" type="Node" parent="."]
+
+[node name="Enemies" type="Node" parent="."]

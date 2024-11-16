@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://daioq0o5cmfef"]
+
+[ext_resource type="Script" path="res://scripts/sky.gd" id="1_2i3x5"]
+[ext_resource type="Script" path="res://scripts/cloud_generator.gd" id="1_8i1p6"]
+[ext_resource type="Script" path="res://scripts/line.gd" id="5_lr7qq"]
+
+[node name="ocean_background" type="Node2D"]
+
+[node name="SkyNode" type="Node2D" parent="."]
+script = ExtResource("1_2i3x5")
+horizon_pos = 256.0
+
+[node name="cloud_generator" type="Node" parent="."]
+script = ExtResource("1_8i1p6")
+max_point = 256
+
+[node name="Line" type="Node2D" parent="."]
+visible = false
+script = ExtResource("5_lr7qq")
+line_width = 2.0
+length = 640.0
+height = 256.0

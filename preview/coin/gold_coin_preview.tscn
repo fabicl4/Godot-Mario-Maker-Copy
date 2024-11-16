@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ft5tb3dj73fv"]
+
+[ext_resource type="PackedScene" uid="uid://cltefhmpr8q8d" path="res://preview/preview.tscn" id="1_yxktq"]
+
+[node name="PreviewTest" instance=ExtResource("1_yxktq")]
+item_group = 1

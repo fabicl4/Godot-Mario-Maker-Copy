@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdau2brjhla0x"]
+
+[ext_resource type="SpriteFrames" uid="uid://bigvo321bctub" path="res://assets/animation/front_palm_tree_top_animation.tres" id="1_jpbls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ppvg"]
+size = Vector2(26, 11)
+
+[node name="FrontPalmTreeTop" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_jpbls")
+autoplay = "default"
+frame_progress = 0.722943
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_6ppvg")
+one_way_collision = true

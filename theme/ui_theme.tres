@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bcq5iqg4hlrfe"]
+
+[ext_resource type="FontFile" uid="uid://du0rlrcyf87ph" path="res://assets/fonts/PixelOperator8.ttf" id="1_gwwob"]
+
+[resource]
+default_font = ExtResource("1_gwwob")
+default_font_size = 16
+HBoxContainer/constants/separation = 32
+ItemList/constants/h_separation = 16
+ItemList/constants/line_separation = 2
+ItemList/constants/v_separation = 4
+MarginContainer/constants/margin_bottom = 16
+MarginContainer/constants/margin_left = 16
+MarginContainer/constants/margin_right = 16
+MarginContainer/constants/margin_top = 16
+TabContainer/constants/side_margin = 16

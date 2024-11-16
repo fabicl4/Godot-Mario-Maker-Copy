@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://daw3svvc37n1i"]
+
+[ext_resource type="Texture2D" uid="uid://g2jl15vdpbuf" path="res://assets/sprites/Back Palm Trees/Back Palm Tree Regular 01.png" id="1_vls4n"]
+[ext_resource type="Texture2D" uid="uid://d00o8t8sf0uqo" path="res://assets/sprites/Back Palm Trees/Back Palm Tree Regular 02.png" id="2_2byhb"]
+[ext_resource type="Texture2D" uid="uid://bcl47epgsk0r6" path="res://assets/sprites/Back Palm Trees/Back Palm Tree Regular 03.png" id="3_3nr4p"]
+[ext_resource type="Texture2D" uid="uid://bgeqnu0g866m" path="res://assets/sprites/Back Palm Trees/Back Palm Tree Regular 04.png" id="4_3sbyl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4rpaf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vls4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2byhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3nr4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3sbyl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="BgPalm2" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_4rpaf")
+animation = &"idle"
+autoplay = "idle"

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdbyxqkpg8it7"]
+
+[ext_resource type="PackedScene" uid="uid://cltefhmpr8q8d" path="res://preview/preview.tscn" id="1_gggg4"]
+[ext_resource type="Texture2D" uid="uid://1gk0r7j2h1wk" path="res://assets/sprites/Red Diamond/01.png" id="2_12r0k"]
+
+[node name="PreviewTest" instance=ExtResource("1_gggg4")]
+item_group = 1
+item_index = 2
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_12r0k")

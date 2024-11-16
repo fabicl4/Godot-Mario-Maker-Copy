@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://daioq0o5cmfef"]
+
+[ext_resource type="Script" path="res://scripts/cloud_generator.gd" id="1_8i1p6"]
+[ext_resource type="Texture2D" uid="uid://dv0n8uqh440xr" path="res://assets/sprites/cloud_1.png" id="2_y7bje"]
+[ext_resource type="Texture2D" uid="uid://bceg8o3nskmpe" path="res://assets/sprites/cloud_2.png" id="3_uo7xa"]
+[ext_resource type="Texture2D" uid="uid://c43kl52fq6re" path="res://assets/sprites/cloud_3.png" id="4_qyf12"]
+[ext_resource type="Script" path="res://scripts/line.gd" id="5_lr7qq"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_al6xn"]
+size = Vector2(640, 360)
+
+[node name="ocean_background" type="Node2D"]
+
+[node name="sky" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_al6xn")
+centered = false
+script = ExtResource("1_8i1p6")
+
+[node name="cloud_generator" type="Node" parent="."]
+script = ExtResource("1_8i1p6")
+
+[node name="cloud1" type="Sprite2D" parent="cloud_generator"]
+position = Vector2(43, 38)
+texture = ExtResource("2_y7bje")
+
+[node name="cloud2" type="Sprite2D" parent="cloud_generator"]
+position = Vector2(298, 73)
+texture = ExtResource("3_uo7xa")
+
+[node name="cloud3" type="Sprite2D" parent="cloud_generator"]
+position = Vector2(705, 104)
+texture = ExtResource("4_qyf12")
+
+[node name="Line" type="Node2D" parent="."]
+position = Vector2(-37, 208)
+script = ExtResource("5_lr7qq")
+line_width = 10.0
+width = 100.0
+height = 100.0

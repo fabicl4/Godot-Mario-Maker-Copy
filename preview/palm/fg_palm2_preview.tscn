@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5yl2ilgvohj5"]
+
+[ext_resource type="PackedScene" uid="uid://cltefhmpr8q8d" path="res://preview/preview.tscn" id="1_m8mrx"]
+[ext_resource type="Texture2D" uid="uid://x6g7cwajbj2b" path="res://assets/sprites/Front Palm Trees/Front Palm Preview.png" id="2_wxehf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5ngs"]
+atlas = ExtResource("2_wxehf")
+region = Rect2(49, 0, 62, 53)
+
+[node name="PreviewTest" instance=ExtResource("1_m8mrx")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-15, -5)
+texture = SubResource("AtlasTexture_p5ngs")
+
+[node name="Button" parent="." index="1"]
+offset_left = -46.0
+offset_top = -32.0
+offset_bottom = 22.0

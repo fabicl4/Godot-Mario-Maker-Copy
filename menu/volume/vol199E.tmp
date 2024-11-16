@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2eju1kg5yvd7"]
+
+[ext_resource type="Script" path="res://scripts/ui/volume_settings.gd" id="1_hyc6n"]
+[ext_resource type="Theme" uid="uid://bcq5iqg4hlrfe" path="res://assets/theme/ui_theme.tres" id="1_y531y"]
+
+[node name="VolumeSettings" type="HBoxContainer" node_paths=PackedStringArray("_bus_name_label", "_volume_slider", "_volume_percentage_label")]
+theme = ExtResource("1_y531y")
+script = ExtResource("1_hyc6n")
+_bus_name_label = NodePath("BusName")
+_volume_slider = NodePath("VolumeHSlider")
+_volume_percentage_label = NodePath("VolumePercentageLabel")
+start_volume_percentage = 20.0
+bus_index = 1
+bus_name = "Music"
+
+[node name="BusName" type="Label" parent="."]
+custom_minimum_size = Vector2(110, 16)
+layout_mode = 2
+text = "Bus Name"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VolumeHSlider" type="HSlider" parent="."]
+custom_minimum_size = Vector2(196, 32)
+layout_mode = 2
+
+[node name="VolumePercentageLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(32, 8)
+layout_mode = 2
+text = "100%"
+
+[connection signal="value_changed" from="VolumeHSlider" to="." method="_on_volume_h_slider_value_changed"]

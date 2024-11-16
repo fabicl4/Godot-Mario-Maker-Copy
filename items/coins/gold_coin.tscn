@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxkm2f78vjg2q"]
+
+[ext_resource type="PackedScene" uid="uid://js0r7s46b3kp" path="res://items/coins/default_coin.tscn" id="1_yrl51"]
+[ext_resource type="SpriteFrames" uid="uid://bfsr0w323cuw5" path="res://assets/animation/gold_coin_animation.tres" id="2_hcf43"]
+
+[node name="DefaultCoin" instance=ExtResource("1_yrl51")]
+value = 5
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = ExtResource("2_hcf43")
+animation = &"idle"
+frame_progress = 0.316675

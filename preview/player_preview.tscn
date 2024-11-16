@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqj5c3chn8axs"]
+
+[ext_resource type="Script" path="res://preview/player_preview.gd" id="1_cl3j1"]
+[ext_resource type="Texture2D" uid="uid://bl2q74ls3xwv7" path="res://assets/sprites/Captain_Clown_Nose-Sheet.png" id="2_y3li1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uljkc"]
+atlas = ExtResource("2_y3li1")
+region = Rect2(26, 36, 24, 28)
+
+[node name="PlayerPreview" type="Node2D"]
+script = ExtResource("1_cl3j1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_uljkc")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

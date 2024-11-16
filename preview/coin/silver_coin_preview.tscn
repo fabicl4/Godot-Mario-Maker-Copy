@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://8xvbpcuk3wk4"]
+
+[ext_resource type="PackedScene" uid="uid://cltefhmpr8q8d" path="res://preview/preview.tscn" id="1_3wiua"]
+[ext_resource type="Texture2D" uid="uid://cbl8ltaub80yy" path="res://assets/sprites/Silver Coin/01.png" id="2_ae3sg"]
+
+[node name="PreviewTest" instance=ExtResource("1_3wiua")]
+item_group = 1
+item_index = 1
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ae3sg")

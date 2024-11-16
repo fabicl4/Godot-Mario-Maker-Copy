@@ -1,0 +1,47 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://y58lppf1c53o"]
+
+[ext_resource type="Texture2D" uid="uid://cgi6v0y5fr7s3" path="res://assets/sprites/Diamond Effect/01.png" id="1_u7b6j"]
+[ext_resource type="Texture2D" uid="uid://blea8gfojljfr" path="res://assets/sprites/Diamond Effect/02.png" id="2_stlhv"]
+[ext_resource type="Texture2D" uid="uid://crndk0uhhf5fu" path="res://assets/sprites/Diamond Effect/03.png" id="3_b5fgb"]
+[ext_resource type="Texture2D" uid="uid://7bg3is23lxar" path="res://assets/sprites/Diamond Effect/04.png" id="4_qrbfr"]
+[ext_resource type="Texture2D" uid="uid://n7vj7cd5uucx" path="res://assets/sprites/Red Diamond/01.png" id="5_fvm46"]
+[ext_resource type="Texture2D" uid="uid://d1y6dq5cuwpyy" path="res://assets/sprites/Red Diamond/02.png" id="6_oj8o8"]
+[ext_resource type="Texture2D" uid="uid://c3vq601bmba13" path="res://assets/sprites/Red Diamond/03.png" id="7_y5lk2"]
+[ext_resource type="Texture2D" uid="uid://ivqcyl1naes7" path="res://assets/sprites/Red Diamond/04.png" id="8_0fn2o"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u7b6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_stlhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b5fgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qrbfr")
+}],
+"loop": true,
+"name": &"effect",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fvm46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_oj8o8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_y5lk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0fn2o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]

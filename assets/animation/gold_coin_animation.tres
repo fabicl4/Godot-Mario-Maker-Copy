@@ -1,0 +1,43 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bfsr0w323cuw5"]
+
+[ext_resource type="Texture2D" uid="uid://c2ko5gak0gyat" path="res://assets/sprites/Coin Effect/01.png" id="1_7w5fy"]
+[ext_resource type="Texture2D" uid="uid://dx1muc2f0c6uh" path="res://assets/sprites/Gold Coin/01.png" id="1_lpmj8"]
+[ext_resource type="Texture2D" uid="uid://codgn2oh3jk1v" path="res://assets/sprites/Gold Coin/02.png" id="2_3wbqu"]
+[ext_resource type="Texture2D" uid="uid://lsv1tanfly1m" path="res://assets/sprites/Coin Effect/02.png" id="2_f033f"]
+[ext_resource type="Texture2D" uid="uid://5lhue1wce5j1" path="res://assets/sprites/Gold Coin/03.png" id="3_3m4s0"]
+[ext_resource type="Texture2D" uid="uid://c7qob0m0q3rig" path="res://assets/sprites/Coin Effect/03.png" id="3_hsmn4"]
+[ext_resource type="Texture2D" uid="uid://b55o5dve6d25h" path="res://assets/sprites/Gold Coin/04.png" id="4_p0pn1"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7w5fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f033f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hsmn4")
+}],
+"loop": true,
+"name": &"effect",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lpmj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3wbqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3m4s0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p0pn1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]

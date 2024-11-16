@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfwugkj7cfokf"]
+
+[ext_resource type="Script" path="res://scripts/play_level.gd" id="1_xky8d"]
+[ext_resource type="PackedScene" uid="uid://daioq0o5cmfef" path="res://scenes/background.tscn" id="2_aq2ii"]
+[ext_resource type="PackedScene" uid="uid://b5ja4y0kx4mlp" path="res://scenes/level.tscn" id="3_wxdrb"]
+[ext_resource type="PackedScene" uid="uid://dstsvl60w1kiu" path="res://menu/in_game_menu.tscn" id="4_47muu"]
+[ext_resource type="PackedScene" uid="uid://d3wcp3dhkyfx1" path="res://ui/hub.tscn" id="5_lyhom"]
+[ext_resource type="Theme" path="res://theme/ui_theme.tres" id="6_ifkjl"]
+[ext_resource type="FontFile" uid="uid://bt1lbket2snnd" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_wrlwx"]
+
+[node name="play_level" type="Node2D"]
+script = ExtResource("1_xky8d")
+
+[node name="OceanBackground" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ocean_background" parent="OceanBackground" instance=ExtResource("2_aq2ii")]
+
+[node name="Level" parent="." instance=ExtResource("3_wxdrb")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUB" parent="UI" instance=ExtResource("5_lyhom")]
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -134.0
+offset_bottom = 56.0
+grow_horizontal = 0
+theme = ExtResource("6_ifkjl")
+
+[node name="Button" type="Button" parent="UI/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_wrlwx")
+theme_override_font_sizes/font_size = 8
+toggle_mode = true
+text = "OPTIONS"
+
+[node name="OptionsMenu" parent="UI" instance=ExtResource("4_47muu")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -98.0
+offset_right = 256.0
+offset_bottom = 98.0
+
+[connection signal="toggled" from="UI/MarginContainer/Button" to="." method="_on_button_toggled"]

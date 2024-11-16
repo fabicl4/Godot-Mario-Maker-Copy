@@ -1,0 +1,93 @@
+[gd_scene load_steps=15 format=4 uid="uid://cy43uyh2x55ov"]
+
+[ext_resource type="PackedScene" uid="uid://daioq0o5cmfef" path="res://scenes/background.tscn" id="1_5bsbu"]
+[ext_resource type="TileSet" uid="uid://bfce8deow0bdn" path="res://resources/tileset/terrain_tileset.tres" id="1_o4byv"]
+[ext_resource type="Script" path="res://scripts/playground.gd" id="1_sjk0a"]
+[ext_resource type="PackedScene" uid="uid://0262r2yvcdai" path="res://items/palms/bg_palm/bg_palm1.tscn" id="3_3ni5w"]
+[ext_resource type="PackedScene" uid="uid://d2jqde17cfabm" path="res://player/player.tscn" id="3_phyum"]
+[ext_resource type="PackedScene" uid="uid://dstsvl60w1kiu" path="res://menu/in_game_menu.tscn" id="4_5p50i"]
+[ext_resource type="PackedScene" uid="uid://daw3svvc37n1i" path="res://items/palms/bg_palm/bg_palm2.tscn" id="4_6jq4x"]
+[ext_resource type="PackedScene" uid="uid://bxkm2f78vjg2q" path="res://items/coins/gold_coin.tscn" id="5_wbj3l"]
+[ext_resource type="Theme" path="res://theme/ui_theme.tres" id="6_ve4wa"]
+[ext_resource type="PackedScene" uid="uid://d3wcp3dhkyfx1" path="res://ui/hub.tscn" id="7_33k5c"]
+[ext_resource type="PackedScene" uid="uid://c8ucj48wfr6v" path="res://items/palms/front_palm/palm_1.tscn" id="8_6o3eh"]
+[ext_resource type="PackedScene" uid="uid://coq0qnog4oj3s" path="res://items/palms/front_palm/palm_2.tscn" id="9_u7046"]
+[ext_resource type="PackedScene" uid="uid://levjehx6nlmt" path="res://items/coins/silver_coin.tscn" id="13_wlufq"]
+[ext_resource type="PackedScene" uid="uid://dflio6yrg6bd0" path="res://items/coins/red_diamond.tscn" id="14_ql65f"]
+
+[node name="playground" type="Node2D"]
+script = ExtResource("1_sjk0a")
+
+[node name="OceanBackground" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ocean_background" parent="OceanBackground" instance=ExtResource("1_5bsbu")]
+
+[node name="BgPalms" type="Node2D" parent="."]
+
+[node name="BgPalm1" parent="BgPalms" instance=ExtResource("3_3ni5w")]
+position = Vector2(89, -49)
+
+[node name="BgPalm2" parent="BgPalms" instance=ExtResource("4_6jq4x")]
+position = Vector2(-151, 109)
+
+[node name="BgPalm3" parent="BgPalms" instance=ExtResource("4_6jq4x")]
+position = Vector2(-59, 142)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD2//r/AQABAAEAAAD2//v/AQABAAEAAAD2//z/AQABAAEAAAD2//3/AQABAAEAAAD2//7/AQABAAEAAAD2////AQABAAEAAAD2/wAAAQABAAEAAAD2/wEAAQABAAEAAAD2/wIAAQABAAEAAAD2/wMAAQABAAEAAAD2/wQAAQABAAEAAAD2/wUAAQABAAEAAAD3/wUAAQABAAEAAAD4/wUAAQABAAEAAAD5/wUAAQABAAEAAAD6/wUAAQABAAEAAAD7/wUAAQABAAEAAAD8/wUAAQABAAEAAAD9/wUAAQABAAEAAAD+/wUAAQABAAEAAAD//wUAAQABAAEAAAAAAAUAAQABAAEAAAABAAUAAQABAAEAAAACAAUAAQABAAEAAAADAAUAAQABAAEAAAAEAAUAAQABAAEAAAAFAAUAAQABAAEAAAAGAAUAAQABAAEAAAAHAAUAAQABAAEAAAAIAAUAAQABAAEAAAAJAAUAAQABAAEAAAAJAAQAAQABAAAAAAAJAAAAAQABAAIAAAAJAP//AQABAAEAAAAJAP7/AQABAAEAAAAJAP3/AQABAAEAAAAJAPz/AQABAAEAAAAJAPv/AQABAAEAAAAJAPr/AQABAAEAAAAIAPr/AQABAAEAAAAHAPr/AQABAAEAAAAGAPr/AQABAAEAAAAFAPr/AQABAAEAAAAEAPr/AQABAAEAAAADAPr/AQABAAEAAAACAPr/AQABAAEAAAABAPr/AQABAAEAAAAAAPr/AQABAAEAAAD///r/AQABAAEAAAD+//r/AQABAAEAAAD9//r/AQABAAEAAAD8//r/AQABAAEAAAD7//r/AQABAAEAAAD6//r/AQABAAEAAAD5//r/AQABAAEAAAD4//r/AQABAAEAAAD3//r/AQABAAEAAAD4//v/AQABAAIAAAD5//v/AQABAAIAAAD6//v/AQABAAIAAAD7//v/AQABAAIAAAD8//v/AQABAAIAAAD9//v/AQABAAIAAAD+//v/AQABAAIAAAD///v/AQABAAIAAAAAAPv/AQABAAIAAAABAPv/AQABAAIAAAACAPv/AQABAAIAAAADAPv/AQABAAIAAAAEAPv/AQABAAIAAAAFAPv/AQABAAIAAAAGAPv/AQABAAIAAAAHAPv/AQABAAIAAAAIAPz/AQAAAAEAAAAIAP3/AQAAAAEAAAAIAP7/AQAAAAEAAAAIAP//AQAAAAEAAAAIAAAAAQAAAAIAAAAHAAQAAQABAAAAAAAGAAQAAQABAAAAAAAFAAQAAQABAAAAAAAEAAQAAQABAAAAAAADAAQAAQAJAAAAAAACAAQAAQABAAAAAAABAAQAAQABAAAAAAAAAAQAAQABAAAAAAD//wQAAQABAAAAAAD+/wQAAQABAAAAAAD9/wQAAQABAAAAAAD8/wQAAQABAAAAAAD7/wQAAQAGAAEAAAD6/wQAAQABAAEAAAD5/wQAAQABAAEAAAD4/wQAAQABAAEAAAD3/wMAAQABAAEAAAD3/wIAAQABAAEAAAD3/wEAAQAGAAEAAAD3/wAAAQACAAEAAAD3////AQACAAEAAAD3//7/AQACAAEAAAD3//3/AQACAAEAAAD3//z/AQACAAEAAAD3//v/AQAGAAAAAAAIAPv/AQAHAAAAAAD3/wQAAQABAAEAAAAIAAQAAQABAAAAAAAGAAAAAQAEAAQAAAAAAP7/AQAAAAAAAAABAP7/AQABAAAAAAACAP7/AQACAAAAAAAAAP//AQAAAAIAAAABAP//AQABAAIAAAACAP//AQACAAIAAAD5/wMAAQAGAAEAAAD5/wIAAQACAAEAAAD5/wEAAQACAAAAAAD4/wEAAQABAAAAAAD4/wIAAQABAAEAAAD4/wMAAQABAAEAAAD6/wMAAQABAAAAAAD7/wMAAQACAAAAAAAJAAYAAQABAAIAAAAIAAYAAQABAAIAAAAHAAYAAQABAAIAAAAGAAYAAQABAAIAAAAFAAYAAQABAAIAAAAEAAYAAQABAAIAAAADAAYAAQABAAIAAAACAAYAAQABAAIAAAABAAYAAQABAAIAAAAAAAYAAQABAAIAAAD//wYAAQABAAIAAAD+/wYAAQABAAIAAAD9/wYAAQABAAIAAAD8/wYAAQABAAIAAAD7/wYAAQABAAIAAAD6/wYAAQABAAIAAAD5/wYAAQABAAIAAAD4/wYAAQABAAIAAAD3/wYAAQABAAIAAAD1/wYAAQAAAAIAAAD2/wYAAQABAAIAAAD1/wUAAQAAAAEAAAD1/wQAAQAAAAEAAAD1/wMAAQAAAAEAAAD1/wIAAQAAAAEAAAD1/wEAAQAAAAEAAAD1/wAAAQAAAAEAAAD1////AQAAAAEAAAD1//7/AQAAAAEAAAD1//3/AQAAAAEAAAD1//z/AQAAAAEAAAD1//v/AQAAAAEAAAD1//r/AQAAAAEAAAD1//n/AQAAAAAAAAD2//n/AQABAAAAAAD3//n/AQABAAAAAAD4//n/AQABAAAAAAD5//n/AQABAAAAAAD6//n/AQABAAAAAAD7//n/AQABAAAAAAD8//n/AQABAAAAAAD9//n/AQABAAAAAAD+//n/AQABAAAAAAD///n/AQABAAAAAAAAAPn/AQABAAAAAAABAPn/AQABAAAAAAACAPn/AQABAAAAAAADAPn/AQABAAAAAAAEAPn/AQABAAAAAAAFAPn/AQABAAAAAAAGAPn/AQABAAAAAAAHAPn/AQABAAAAAAAIAPn/AQABAAAAAAAJAPn/AQABAAAAAAAKAPn/AQACAAAAAAAKAPr/AQACAAEAAAAKAPv/AQACAAEAAAAKAPz/AQACAAEAAAAKAP3/AQACAAEAAAAKAP7/AQACAAEAAAAKAP//AQACAAEAAAAKAAAAAQACAAIAAAADAAIAAQAEAAAAAAADAAMAAQAEAAEAAAAKAAQAAQABAAAAAAALAAQAAQABAAAAAAAMAAQAAQABAAAAAAANAAQAAQABAAAAAAAOAAQAAQABAAAAAAAPAAQAAQABAAAAAAAQAAQAAQABAAAAAAARAAQAAQABAAAAAAASAAQAAQABAAAAAAATAAQAAQABAAAAAAAUAAQAAQABAAAAAAAVAAQAAQABAAAAAAAWAAQAAQABAAAAAAAXAAQAAQABAAAAAAAYAAQAAQABAAAAAAAZAAQAAQABAAAAAAAaAAQAAQABAAAAAAAbAAQAAQABAAAAAAAcAAQAAQAHAAQAAAAcAAUAAQACAAEAAAAKAAYAAQABAAIAAAALAAYAAQABAAIAAAAMAAYAAQABAAIAAAANAAYAAQABAAIAAAANAAUAAQABAAEAAAAOAAUAAQABAAEAAAAPAAUAAQABAAEAAAAQAAUAAQABAAEAAAARAAUAAQABAAEAAAASAAUAAQABAAEAAAATAAUAAQABAAEAAAATAAYAAQABAAIAAAAUAAYAAQABAAIAAAAOAAYAAQABAAIAAAAPAAYAAQABAAIAAAAQAAYAAQABAAIAAAARAAYAAQABAAIAAAASAAYAAQABAAIAAAAVAAYAAQABAAIAAAAWAAYAAQABAAIAAAAKAAUAAQABAAEAAAALAAUAAQABAAEAAAAMAAUAAQABAAEAAAAUAAUAAQABAAEAAAAVAAUAAQABAAEAAAAWAAUAAQABAAEAAAAXAAUAAQABAAEAAAAYAAUAAQABAAEAAAAZAAUAAQABAAEAAAAaAAUAAQABAAEAAAAbAAUAAQABAAEAAAAXAAYAAQABAAIAAAAYAAYAAQABAAIAAAAZAAYAAQABAAIAAAAaAAYAAQABAAIAAAAbAAYAAQABAAIAAAAcAAYAAQACAAIAAAAcAAMAAQAEAAEAAAAcAAIAAQAEAAEAAAAcAAEAAQAEAAEAAAAcAAAAAQAEAAAAAAA=")
+tile_set = ExtResource("1_o4byv")
+
+[node name="Player" parent="." instance=ExtResource("3_phyum")]
+position = Vector2(-42, -12)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(42, 15)
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="DefaultCoin" parent="Coins" instance=ExtResource("5_wbj3l")]
+position = Vector2(215, 110)
+
+[node name="DefaultCoin2" parent="Coins" instance=ExtResource("5_wbj3l")]
+position = Vector2(279, 109)
+
+[node name="FgPalms" type="Node" parent="."]
+
+[node name="palm1" parent="FgPalms" instance=ExtResource("8_6o3eh")]
+position = Vector2(173, 134)
+
+[node name="palm2" parent="FgPalms" instance=ExtResource("9_u7046")]
+position = Vector2(8, -43)
+
+[node name="Cursor" type="Node" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="OptionsMenu" parent="UI" instance=ExtResource("4_5p50i")]
+visible = false
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -194.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = 25.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+theme = ExtResource("6_ve4wa")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 8
+text = "velocity: (0,0)"
+
+[node name="HUB" parent="UI" instance=ExtResource("7_33k5c")]
+
+[node name="DefaultCoin" parent="." instance=ExtResource("13_wlufq")]
+position = Vector2(207, -14)
+
+[node name="DefaultCoin2" parent="." instance=ExtResource("14_ql65f")]
+position = Vector2(29, -77)

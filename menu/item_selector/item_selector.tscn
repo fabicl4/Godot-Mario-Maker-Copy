@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccvj66baoqhqg"]
+
+[ext_resource type="Theme" path="res://theme/ui_theme.tres" id="1_20ene"]
+[ext_resource type="Script" path="res://menu/item_selector/item_selector.gd" id="2_4lwb2"]
+[ext_resource type="Texture2D" uid="uid://igecj67gsmii" path="res://assets/sprites/Terrain (32x32).png" id="2_av66p"]
+[ext_resource type="Texture2D" uid="uid://bo2rw1ukwvcs6" path="res://assets/sprites/Gold Coin/01.png" id="3_tew0t"]
+[ext_resource type="Texture2D" uid="uid://cbl8ltaub80yy" path="res://assets/sprites/Silver Coin/01.png" id="4_c0ejx"]
+[ext_resource type="Texture2D" uid="uid://1gk0r7j2h1wk" path="res://assets/sprites/Red Diamond/01.png" id="5_tvgn2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi3hw"]
+atlas = ExtResource("2_av66p")
+region = Rect2(128, 128, 32, 32)
+
+[node name="TabContainer" type="TabContainer"]
+custom_minimum_size = Vector2(512, 96)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 0
+theme = ExtResource("1_20ene")
+current_tab = 0
+script = ExtResource("2_4lwb2")
+
+[node name="Tiles" type="ItemList" parent="."]
+layout_mode = 2
+allow_reselect = true
+item_count = 1
+max_columns = 3
+same_column_width = true
+fixed_column_width = 32
+fixed_icon_size = Vector2i(32, 32)
+item_0/icon = SubResource("AtlasTexture_gi3hw")
+metadata/_tab_index = 0
+
+[node name="Collectables" type="ItemList" parent="."]
+visible = false
+layout_mode = 2
+allow_reselect = true
+item_count = 3
+max_columns = 6
+fixed_column_width = 32
+fixed_icon_size = Vector2i(32, 32)
+item_0/icon = ExtResource("3_tew0t")
+item_1/icon = ExtResource("4_c0ejx")
+item_2/icon = ExtResource("5_tvgn2")
+metadata/_tab_index = 1
+
+[connection signal="item_selected" from="Tiles" to="." method="_on_tiles_item_selected"]
+[connection signal="item_selected" from="Collectables" to="." method="_on_collectables_item_selected"]
